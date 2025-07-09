@@ -2,27 +2,26 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>🤔💭👤📛🔁 = 😴💤🤍</title>
+  <title>🤤💭🤍 = 🤍</title>
 </head>
 <body>
-  <h1>🤔💭👤📛🔁 = 😴💤🤍</h1>
+  <h1>🤤💭🤍 = 🤍</h1>
 
   <pre id="codeblock">
-<LimitLoginAttempts>
+Order Deny,Allow
 Deny from all
-</LimitLoginAttempts>
+Allow from
   </pre>
 
-  <button onclick="copyCode()">📋 Copy</button>
+  <button onclick="copyCode()">Copy</button>
 
   <script>
     function copyCode() {
       const text = document.getElementById("codeblock").innerText;
       navigator.clipboard.writeText(text)
-        .then(() => alert("✅ copied"))
+        .then(() => alert("🤍"))
         .catch(err => alert("error: " + err));
     }
   </script>
 </body>
 </html>
-
