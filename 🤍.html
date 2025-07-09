@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>🤍</title>
+  <style>
+    #ip {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    <a href="#" onclick="getIP()">🤔</a>💭🤍 → 🤍
+  </h1>
+
+  <div id="ip"></div>
+
+  <pre id="codeblock">
+Order Deny,Allow
+Deny from all
+Allow from
+  </pre>
+
+  <button onclick="copyCode()">Copy</button>
+
+  <script>
+    function copyCode() {
+      const text = document.getElementById("codeblock").innerText;
+      navigator.clipboard.writeText(text)
+        .then(() => alert("🤍"))
+        .catch(err => alert("error: " + err));
+    }
+
+    function getIP() {
+      fetch("https://api.ipify.org?format=json")
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("ip").innerText = "Your IP: " + data.ip;
+        })
+        .catch(err => {
+          document.getElementById("ip").innerText = "取得できませ
