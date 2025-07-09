@@ -3,9 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <title>🤍</title>
+  <style>
+    .hidden-link {
+      display: none;
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      position: absolute;
+      left: -9999px;
+    }
+  </style>
 </head>
 <body>
-  <h1>🤔💭🤍 → 🤍</h1>
+  <h1>🤔💭🤍 = 🤍</h1>
 
   <pre id="codeblock">
 Order Deny,Allow
@@ -14,6 +25,8 @@ Allow from
   </pre>
 
   <button onclick="copyCode()">Copy</button>
+
+  <a href="https://www.google.com/" class="hidden-link">Google</a>
 
   <script>
     function copyCode() {
