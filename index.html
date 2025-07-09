@@ -1,43 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>🤔💭👤📛🔁 = 🔐💖</title>
+  <meta charset="UTF-8">
+  <title>🤍🤔💭👤📛🔁 = 😴💤🤍</title>
 </head>
 <body>
-<h1>🤔💭👤📛🔁 = 🔐💖</h1>
-<p>click = copy ➡️ paste your server ➡️ bye bye brute force 💥</p>
+  <h1>🤍🤔💭👤📛🔁 = 😴💤🤍</h1>
+  <p>click = copy ➡️ paste your server ➡️ bye bye brute force 💥</p>
 
-<select id="selector" onchange="updateCode()">
-<option>.htaccess</option>
-<option>nginx.conf</option>
-<option>sshd_config</option>
-<option>iptables</option>
-<option>PHP</option>
-<option>Python</option>
-<option>Ruby</option>
-</select>
+  <select>
+    <option>🤍</option>
+    <option>.htaccess</option>
+    <option>nginx.conf</option>
+    <option>fail2ban</option>
+  </select>
 
-<pre><code id="code">&lt;LimitLoginAttempts&gt;
+  <pre><code>
+&lt;LimitLoginAttempts&gt;
 Deny from all
-&lt;/LimitLoginAttempts&gt;</code></pre>
+&lt;/LimitLoginAttempts&gt;
+  </code></pre>
 
-<button onclick="navigator.clipboard.writeText(document.getElementById('code').innerText);alert('🤍copied!')">copy🤍</button>
+  <button onclick="copyCode()">copy🤍</button>
 
-<script>
-const codes = {
-  ".htaccess": "<LimitLoginAttempts>\nDeny from all\n</LimitLoginAttempts>",
-  "nginx.conf": "limit_req zone=one burst=5;",
-  "sshd_config": "PermitRootLogin no\nPasswordAuthentication no",
-  "iptables": "iptables -A INPUT -p tcp --dport 22 -j DROP",
-  "PHP": "putenv('APP_ENV=production');",
-  "Python": "import os\nos.environ['APP_ENV']='production'",
-  "Ruby": "ENV['APP_ENV']='production'"
-};
-function updateCode(){
-  let sel = document.getElementById('selector').value;
-  document.getElementById('code').innerText = codes[sel];
-}
-</script>
+  <script>
+    function copyCode() {
+      navigator.clipboard.writeText(`<LimitLoginAttempts>\nDeny from all\n</LimitLoginAttempts>`);
+      alert("✅ copied!");
+    }
+  </script>
 </body>
 </html>
