@@ -2,32 +2,27 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>🤍🤔💭👤📛🔁 = 😴💤🤍</title>
+  <title>🤔💭👤📛🔁 = 😴💤🤍</title>
 </head>
 <body>
-  <h1>🤍🤔💭👤📛🔁 = 😴💤🤍</h1>
-  <p>click = copy → paste your server → 🤍</p>
+  <h1>🤔💭👤📛🔁 = 😴💤🤍</h1>
 
-  <select>
-    <option>🤍</option>
-    <option>.htaccess</option>
-    <option>nginx.conf</option>
-    <option>fail2ban</option>
-  </select>
-
-  <pre><code>
-&lt;LimitLoginAttempts&gt;
+  <pre id="codeblock">
+<LimitLoginAttempts>
 Deny from all
-&lt;/LimitLoginAttempts&gt;
-  </code></pre>
+</LimitLoginAttempts>
+  </pre>
 
-  <button onclick="copyCode()">copy🤍</button>
+  <button onclick="copyCode()">📋 Copy</button>
 
   <script>
     function copyCode() {
-      navigator.clipboard.writeText(`<LimitLoginAttempts>\nDeny from all\n</LimitLoginAttempts>`);
-      alert("✅ copied!");
+      const text = document.getElementById("codeblock").innerText;
+      navigator.clipboard.writeText(text)
+        .then(() => alert("✅ copied"))
+        .catch(err => alert("error: " + err));
     }
   </script>
 </body>
 </html>
+
